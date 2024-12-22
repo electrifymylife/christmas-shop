@@ -1,0 +1,135 @@
+.btn-primary {
+  color: #FFFFFF;
+  background-color: #181C29;
+  border-radius: 20px;
+  padding: 20px 32px;
+  transition: all .3s ease-out;
+
+  &:hover,
+  &:focus {
+    color: #181C29;
+    background-color: #FFFFFF;
+
+    @media (max-width: 1024px) {
+      color: inherit;
+      background-color: #181C29;
+    }
+  }
+}
+
+.btn-tab {
+  color: #FFFFFF;
+  padding: 12px 20px;
+  border-radius: 12px;
+  transition: all .3s ease-out;
+
+  @media (max-width: 760px) {
+    padding: 12px 8px;
+  }
+
+  &:hover,
+  &:focus{
+    background: rgba(255, 255, 255, 0.4);
+  }
+
+  &:hover,
+  &:focus {
+    @media (max-width: 1024px) {
+      background-color: unset;
+    }
+  }
+
+  &.active {
+    background: rgba(255, 255, 255, 0.4);
+    pointer-events: none;
+  }
+}
+
+.btn-slider-prev,
+.btn-slider-next {
+  border: 1px solid #FFFFFF;
+  border-radius: 20px;
+  width: 56px;
+  height: 56px;
+  transition: all .3s ease-out;
+  position: relative;
+
+  &:hover,
+  &:focus {
+    background-color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+
+    @media (max-width: 1024px) {
+      background-color: unset;
+    }
+
+    &:before {
+      background-color: #FF4646;
+
+      @media (max-width: 1024px) {
+        background-color: #FFFFFF;
+      }
+    }
+  }
+
+  &.disabled {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    pointer-events: none;
+    &:before {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+  }
+
+  &:before {
+    position: absolute;
+    content: '';
+    mask-position: center;
+    -webkit-mask-position: center;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    background-color: #FFFFFF;
+    width: 24px;
+    height: 24px;
+    top: calc(50% - 24px/2);
+    left: calc(50% - 24px/2);
+  }
+}
+
+.btn-slider-prev {
+  &:before {
+    mask-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.5 12H6M6 12L12 6M6 12L12 18" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    -webkit-mask-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.5 12H6M6 12L12 6M6 12L12 18" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    -webkit-mask-box-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.5 12H6M6 12L12 6M6 12L12 18" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  }
+}
+
+.btn-slider-next {
+  &:before {
+    mask-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 12H18.5M18.5 12L12.5 6M18.5 12L12.5 18" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    -webkit-mask-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 12H18.5M18.5 12L12.5 6M18.5 12L12.5 18" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    -webkit-mask-box-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 12H18.5M18.5 12L12.5 6M18.5 12L12.5 18" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  }
+}
+
+.btn-up {
+  display: none;
+  position: fixed;
+  right: 8px;
+  bottom: 8px;
+  width: 55px;
+  height: 55px;
+  border: 1px solid #FF4646;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  background-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5V19" stroke="%23FF4646" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 11L12 5" stroke="%23FF4646" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 11L12 5" stroke="%23FF4646" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @media (max-width: 768px) {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+}

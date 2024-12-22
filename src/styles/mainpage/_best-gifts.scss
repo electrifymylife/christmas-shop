@@ -1,0 +1,85 @@
+.best-gifts {
+  background-color: #FF4646;
+  background-image: url("../../imgs/bg-snow.png");
+  background-size: cover;
+  background-position: center;
+  padding: 60px 0;
+}
+
+.best-gifts__caption {
+  text-align: center;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+}
+
+.best-gifts__title {
+  text-align: center;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.best-gifts__list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.best-gifts__item {
+  display: flex;
+  flex-direction: column;
+  background-color: #ECF3F8;
+  border-radius: 20px;
+  cursor: pointer;
+  max-width: 310px;
+  min-height: 342px;
+
+  &:hover,
+  &:focus {
+    & .best-gifts__item-title {
+      color: #FF4646;
+
+      @media (max-width: 1200px) {
+        color: inherit;
+      }
+    }
+  }
+}
+
+.best-gifts__item-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 230px;
+}
+
+.best-gifts__item-info {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: auto;
+}
+
+.best-gifts__item-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 48px;
+  transition: 0.2s ease-in-out;
+}
+
+.best-gifts__item-tag {
+  margin-bottom: 8px;
+
+  &--work {
+    color: #4361FF;
+  }
+  &--health {
+    color: #06A44F;
+  }
+  &--harmony {
+    color: #FF43F7;
+  }
+}

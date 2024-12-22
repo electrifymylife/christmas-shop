@@ -1,0 +1,26 @@
+.hero {
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #FF4646;
+  background-image: url("../../imgs/bg-snow.png"), url("../../imgs/bg-ball.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px 20px 0 0;
+  padding: 60px 0;
+
+  & > .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.hero__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  max-width: 430px;
+  padding: 60px 0;
+}

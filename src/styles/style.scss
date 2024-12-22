@@ -1,0 +1,16 @@
+@import "./helpers/modern-normalize";
+@import "./helpers/fonts";
+@import "./helpers/typography";
+@import "./helpers/buttons";
+@import "./helpers/scaffolding";
+
+@import "./common/header";
+@import "./common/footer";
+
+@import "./mainpage/hero";
+@import "./mainpage/about";
+@import "./mainpage/slider";
+@import "./mainpage/best-gifts";
+@import "./mainpage/cta";
+
+@import "pages/gifts";

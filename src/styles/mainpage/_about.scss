@@ -1,0 +1,55 @@
+.about {
+  background-color: #FF4646;
+  background-image: url("../../imgs/bg-snow.png");
+  background-size: cover;
+  background-position: center;
+  padding: 60px 0;
+
+  & .caption {
+    color: #FF4646;
+  }
+}
+
+.about__wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  overflow: hidden;
+
+  @media (max-width: 760px) {
+    flex-direction: column;
+  }
+}
+
+.about__info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 60px;
+
+  @media (max-width: 760px) {
+    padding: 60px 20px;
+  }
+}
+
+.about__text {
+  max-width: 80%;
+
+  @media (max-width: 1200px) {
+    max-width: 100%;
+  }
+}
+
+.about__img {
+  border-radius: 20px;
+  
+  @media (max-width: 1200px) {
+    width: 376px;
+    height: 528px;
+    object-fit: cover;
+  }
+  @media (max-width: 760px) {
+    width: 364px;
+  }
+}
