@@ -7,6 +7,7 @@ import { modalFiller } from "../modules/modalFiller.js";
 const gifts = await loadGifts;
 const catGiftsList = document.querySelector('.gifts__list');
 const catGiftsItems = [];
+const btnFilter = document.querySelector('.gifts__filter');
 const btnFilterTabs = document.querySelectorAll('.btn-tab');
 const btnScrollTop = document.querySelector('.btn-up');
 
@@ -44,31 +45,20 @@ catalogGenerator();
 modalFiller(catGiftsItems, 'gifts');
 
 /* FILTER ELEMENT */
-const tabHandler = (e) => {
-  let tabTarget = e.currentTarget;
-  if (tabTarget.classList.contains('active')) {
-    tabTarget.classList.remove('active');
-  } else {
-    btnFilterTabs.forEach((tab) => {
-      tab.classList.remove('active');
-    });
-    tabTarget.classList.add('active');
-  }
-  catGiftsItems.forEach((gift) => {
-    gift.style.display = 'none';
-    if (tabTarget.classList.contains('show-all')) {
-      gift.style.display = 'flex';
-    } else if (tabTarget.classList.contains('show-work') && gift.children[1].children[0].textContent === 'For Work') {
-      gift.style.display = 'flex';
-    } else if (tabTarget.classList.contains('show-health') && gift.children[1].children[0].textContent === 'For Health') {
-      gift.style.display = 'flex';
-    } else if (tabTarget.classList.contains('show-harmony') && gift.children[1].children[0].textContent === 'For Harmony') {
-      gift.style.display = 'flex';
+btnFilter.addEventListener('click', e => {
+  const tabTarget = e.target.closest('.btn-tab');
+
+  if (!tabTarget) return;
+
+  btnFilterTabs.forEach(tab => tab.classList.remove('active'));
+  tabTarget.classList.add('active');
+  catGiftsItems.forEach(item => {
+    if (e.target.dataset.tab === 'all' || item.querySelector(`.gifts__item-tag--${tabTarget.dataset.tab}`)) {
+      item.style.display = 'flex';
+    } else {
+      item.style.display = 'none';
     }
   });
-};
-btnFilterTabs.forEach((tab) => {
-  tab.addEventListener('click', tabHandler);
 });
 
 /* SCROLL TO TOP */

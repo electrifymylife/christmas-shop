@@ -33,13 +33,13 @@ burger.addEventListener('click', () => {
     body.style.overflow = 'unset';
   }
 });
-headerMenuItems.forEach((item) => {
-  item.addEventListener('click', () => {
-    burger.classList.remove('header__cross');
-    burger.classList.add('header__burger');
-    headerMenu.classList.remove('active');
-    body.style.overflow = 'unset';
-  });
+headerMenu.addEventListener('click', e => {
+  const targetItem = e.target.closest('.action-large');
+  if (!targetItem) return;
+  burger.classList.remove('header__cross');
+  burger.classList.add('header__burger');
+  headerMenu.classList.remove('active');
+  body.style.overflow = 'unset';
 });
 window.addEventListener('resize', () => {
   if (window.innerWidth > 768) {
