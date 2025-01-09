@@ -47,7 +47,9 @@ const itemHandler = (item, page) => {
   }
 };
 export const modalFiller = (list, page) => {
-  list.forEach((item) => {
-    item.addEventListener('click', () => itemHandler(item, page));
-  });
+  list.addEventListener('click', e => {
+    const targetItem = e.target.closest('li');
+    if (!targetItem) return;
+    itemHandler(targetItem, page);
+  })
 };

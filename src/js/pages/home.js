@@ -6,10 +6,11 @@ import { modalFiller } from "../modules/modalFiller.js";
 /* VARIABLES */
 const gifts = await loadGifts;
 const giftsLength = await loadGifts.then(gifts => gifts.length);
-const bestGiftsItems = document.querySelectorAll('.best-gifts__item');
-const bestGiftsImages = document.querySelectorAll('.best-gifts__item-img img');
-const besfGiftsTags = document.querySelectorAll('.best-gifts__item-tag');
-const bestGiftsTitles = document.querySelectorAll('.best-gifts__item-title');
+const bestGiftsList = document.querySelector('.best-gifts__list');
+const bestGiftsItems = bestGiftsList.querySelectorAll('.best-gifts__item');
+const bestGiftsImages = bestGiftsList.querySelectorAll('.best-gifts__item-img img');
+const besfGiftsTags = bestGiftsList.querySelectorAll('.best-gifts__item-tag');
+const bestGiftsTitles = bestGiftsList.querySelectorAll('.best-gifts__item-title');
 const slider = document.querySelector('.slider__list');
 const slides = document.querySelectorAll('.slider__slide');
 const btnNext = document.querySelector('.btn-slider-next');
@@ -65,7 +66,7 @@ const bestGiftGenerator = (cardsTotal) => {
 
 /* BEST GIFTS ELEMENT */
 bestGiftGenerator(bestGiftsItems.length);
-modalFiller(bestGiftsItems, 'home');
+modalFiller(bestGiftsList, 'home');
 
 /* SLIDER ELEMENT */
 btnPrev.classList.add('disabled');

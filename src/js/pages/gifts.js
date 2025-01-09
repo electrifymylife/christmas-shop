@@ -42,7 +42,7 @@ const catalogGenerator = () => {
   });
 };
 catalogGenerator();
-modalFiller(catGiftsItems, 'gifts');
+modalFiller(catGiftsList, 'gifts');
 
 /* FILTER ELEMENT */
 btnFilter.addEventListener('click', e => {
